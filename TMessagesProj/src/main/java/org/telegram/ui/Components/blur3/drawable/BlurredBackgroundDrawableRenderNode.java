@@ -15,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.LiquidGlassEffect;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
 
 @RequiresApi(api = Build.VERSION_CODES.Q)
@@ -53,13 +52,6 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
     public BlurredBackgroundDrawable setClipToOutline(boolean clipToOutline) {
         renderNode.setClipToOutline(clipToOutline);
         return super.setClipToOutline(clipToOutline);
-    }
-
-    private LiquidGlassEffect liquidGlassEffect;
-
-    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
-    public void setLiquidGlassEffectAllowed() {
-        liquidGlassEffect = new LiquidGlassEffect(renderNodeFill);
     }
 
 
@@ -121,20 +113,6 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         c = renderNodeFill.beginRecording();
         c.save();
         c.translate(-sL, -sT);
-        if (liquidGlassEffect != null && Build.VERSION.SDK_INT >= 33) {
-            final int thickness = Math.max(Math.min(
-                boundProps.liquidThickness <= 0 ? dp(11) : boundProps.liquidThickness,
-                Math.min(boundProps.boundsWithPadding.width(), boundProps.boundsWithPadding.height()) / 5), 1);
-
-            liquidGlassEffect.update(
-                0, 0, boundProps.boundsWithPadding.width(), boundProps.boundsWithPadding.height(),
-                boundProps.shaderRadii[0], boundProps.shaderRadii[2], boundProps.shaderRadii[4], boundProps.shaderRadii[6],
-                thickness,
-                boundProps.liquidIntensity,
-                boundProps.liquidIndex,
-                backgroundColor
-            );
-        }
         source.draw(c, sL, sT, sR, sB);
         c.save();
         renderNodeFill.endRecording();
@@ -145,7 +123,7 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
             c.drawColor(backgroundColor);
         } else {
             c.drawRenderNode(renderNodeFill);
-            if (liquidGlassEffect == null && Color.alpha(backgroundColor) != 0) {
+            if (Color.alpha(backgroundColor) != 0) {
                 c.drawColor(backgroundColor);
             }
         }

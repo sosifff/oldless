@@ -1,13 +1,11 @@
 package org.telegram.ui.Components.blur3;
 
-import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
 import org.telegram.ui.Components.chat.ViewPositionWatcher;
@@ -54,6 +52,15 @@ public class BlurredBackgroundDrawableViewFactory {
     private @Nullable ViewGroup parent;
     private @Nullable GlassEngine engine;
 
+    /**
+     * @deprecated Liquid glass effect was removed. Kept as a no-op so existing
+     * call sites keep compiling; the effect is never applied.
+     */
+    @Deprecated
+    public void setLiquidGlassEffectAllowed(boolean liquidGlassEffectAllowed) {
+        // no-op
+    }
+
     public void setLinkedViewsRef(@Nullable ReferenceList<View> linkedViews) {
         this.linkedViews = linkedViews;
     }
@@ -77,11 +84,6 @@ public class BlurredBackgroundDrawableViewFactory {
     }
 
 
-    private boolean isLiquidGlassEffectAllowed;
-
-    public void setLiquidGlassEffectAllowed(boolean liquidGlassEffectAllowed) {
-        isLiquidGlassEffectAllowed = liquidGlassEffectAllowed;
-    }
 
     public BlurredBackgroundDrawable create() {
         return create(null);
@@ -101,12 +103,6 @@ public class BlurredBackgroundDrawableViewFactory {
 
     public BlurredBackgroundDrawable create(View view, BlurredBackgroundColorProvider provider, boolean multiwindow) {
         final BlurredBackgroundDrawable drawable = source.createDrawable();
-        if (isLiquidGlassEffectAllowed && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (drawable instanceof BlurredBackgroundDrawableRenderNode) {
-                ((BlurredBackgroundDrawableRenderNode) drawable).setLiquidGlassEffectAllowed();
-            }
-        }
-
         drawable.setColorProvider(provider);
         drawable.setOutset(outsetX, outsetY);
 
