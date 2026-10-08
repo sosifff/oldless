@@ -57,13 +57,6 @@
     <string name="OEAppearanceDividerHidden">Ukryte</string>
     <string name="OEAppearanceDividerLine">Linia</string>
     <string name="OEAppearanceDividerSegments">Segmenty</string>
-    <string name="OEAppearanceGlassOutline">Obrys szkła</string>
-    <string name="OEAppearanceGlassOutlineGlare">Refleks</string>
-    <string name="OEAppearanceGlassOutlineSolid">Pełny</string>
-    <string name="OEAppearanceGlassOutlineHidden">Ukryty</string>
-    <string name="OEAppearanceGlassMessageMenu">Szklane menu wiadomości</string>
-    <string name="OEAppearanceGlassMessageMenuInfo">Menu wiadomości i pasek reakcji stają się matowym szkłem.</string>
-    <string name="OEAppearanceGlassMessageMenuBlurOff">Szklane menu wymaga rozmycia, które jest obecnie wyłączone.</string>
     <string name="OEAppearanceIconPacks">Paczki ikon</string>
     <string name="OEAppearanceIconPacksInfo">Dostosuj ikony w całej aplikacji</string>
     <string name="OEAppearancePillStack">Pigułki</string>

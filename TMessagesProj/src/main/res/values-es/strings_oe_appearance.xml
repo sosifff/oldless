@@ -57,13 +57,6 @@
     <string name="OEAppearanceDividerHidden">Ocultos</string>
     <string name="OEAppearanceDividerLine">Línea</string>
     <string name="OEAppearanceDividerSegments">Segmentos</string>
-    <string name="OEAppearanceGlassOutline">Contorno del cristal</string>
-    <string name="OEAppearanceGlassOutlineGlare">Destello</string>
-    <string name="OEAppearanceGlassOutlineSolid">Sólido</string>
-    <string name="OEAppearanceGlassOutlineHidden">Oculto</string>
-    <string name="OEAppearanceGlassMessageMenu">Menú de mensaje de cristal</string>
-    <string name="OEAppearanceGlassMessageMenuInfo">El menú del mensaje y la barra de reacciones pasan a ser cristal esmerilado.</string>
-    <string name="OEAppearanceGlassMessageMenuBlurOff">Los menús de cristal necesitan el desenfoque, que ahora está desactivado.</string>
     <string name="OEAppearanceIconPacks">Paquetes de iconos</string>
     <string name="OEAppearanceIconPacksInfo">Personaliza los iconos de toda la app</string>
     <string name="OEAppearancePillStack">Píldoras</string>

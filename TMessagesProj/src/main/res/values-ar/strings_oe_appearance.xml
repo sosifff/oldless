@@ -56,13 +56,6 @@
     <string name="OEAppearanceDividerHidden">مخفية</string>
     <string name="OEAppearanceDividerLine">خط</string>
     <string name="OEAppearanceDividerSegments">مقاطع</string>
-    <string name="OEAppearanceGlassOutline">حدود زجاجية</string>
-    <string name="OEAppearanceGlassOutlineGlare">لمعان</string>
-    <string name="OEAppearanceGlassOutlineSolid">صلبة</string>
-    <string name="OEAppearanceGlassOutlineHidden">مخفية</string>
-    <string name="OEAppearanceGlassMessageMenu">قائمة رسائل زجاجية</string>
-    <string name="OEAppearanceGlassMessageMenuInfo">تصبح قائمة الرسالة وشريط التفاعلات من زجاج مصنفر.</string>
-    <string name="OEAppearanceGlassMessageMenuBlurOff">تحتاج القوائم الزجاجية إلى التمويه، وهو معطّل حاليًا.</string>
     <string name="OEAppearanceIconPacks">حزم الأيقونات</string>
     <string name="OEAppearanceIconPacksInfo">تخصيص الأيقونات في جميع أنحاء التطبيق</string>
     <string name="OEAppearancePillStack">شريط الكبسولات</string>

@@ -75,13 +75,6 @@
     <string name="OEAppearanceDividerHidden">Hidden</string>
     <string name="OEAppearanceDividerLine">Line</string>
     <string name="OEAppearanceDividerSegments">Segments</string>
-    <string name="OEAppearanceGlassOutline">Glass Outline</string>
-    <string name="OEAppearanceGlassOutlineGlare">Glare</string>
-    <string name="OEAppearanceGlassOutlineSolid">Solid</string>
-    <string name="OEAppearanceGlassOutlineHidden">Hidden</string>
-    <string name="OEAppearanceGlassMessageMenu">Glass Message Menu</string>
-    <string name="OEAppearanceGlassMessageMenuInfo">The message menu and the reactions bar become frosted glass.</string>
-    <string name="OEAppearanceGlassMessageMenuBlurOff">Glass menus need blur, which is currently off.</string>
     <string name="OEAppearancePowerSaverActive">Power saving is on below %1$d%% battery, so blur and animations are paused. The setting is saved and turns back on once you charge.</string>
     <string name="OEAppearancePowerSaverSettings">Power saving</string>
     <string name="OEAppearanceIconPacks">Icon Packs</string>

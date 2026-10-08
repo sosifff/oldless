@@ -57,13 +57,6 @@
     <string name="OEAppearanceDividerHidden">隐藏</string>
     <string name="OEAppearanceDividerLine">直线</string>
     <string name="OEAppearanceDividerSegments">分段</string>
-    <string name="OEAppearanceGlassOutline">玻璃描边</string>
-    <string name="OEAppearanceGlassOutlineGlare">高光</string>
-    <string name="OEAppearanceGlassOutlineSolid">实线</string>
-    <string name="OEAppearanceGlassOutlineHidden">隐藏</string>
-    <string name="OEAppearanceGlassMessageMenu">玻璃消息菜单</string>
-    <string name="OEAppearanceGlassMessageMenuInfo">消息菜单和回应栏将变为磨砂玻璃效果。</string>
-    <string name="OEAppearanceGlassMessageMenuBlurOff">玻璃菜单需要模糊效果，而它当前已关闭。</string>
     <string name="OEAppearanceIconPacks">图标包</string>
     <string name="OEAppearanceIconPacksInfo">自定义应用中的图标</string>
     <string name="OEAppearancePillStack">胶囊栏</string>

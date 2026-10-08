@@ -59,11 +59,6 @@
     <string name="OEAppearanceDividerHidden">Скрыт</string>
     <string name="OEAppearanceDividerLine">Линия</string>
     <string name="OEAppearanceDividerSegments">Сегменты</string>
-    <string name="OEAppearanceGlassOutline">Стеклянный контур</string>
-    <string name="OEAppearanceGlassOutlineGlare">Блик</string>
-    <string name="OEAppearanceGlassOutlineSolid">Сплошной</string>
-    <string name="OEAppearanceGlassOutlineHidden">Скрыт</string>
-    <string name="OEAppearanceGlassMessageMenu">Стеклянное меню сообщения</string>
     <string name="OEAppearanceIconPacks">Наборы иконок</string>
     <string name="OEAppearanceIconPacksInfo">Заменить иконки приложения на свой набор.</string>
     <string name="OEAppearancePillStack">Плашки</string>
@@ -99,8 +94,6 @@
     <string name="OEAppearanceTitleTextUsername">Имя пользователя</string>
     <string name="OEAppearanceTitleTextName">Имя</string>
     <string name="OEAppearanceTitleTextCustom">Свой текст</string>
-    <string name="OEAppearanceGlassMessageMenuInfo">Меню сообщения и панель реакций становятся матовым стеклом.</string>
-    <string name="OEAppearanceGlassMessageMenuBlurOff">Стеклянным меню нужно размытие, а оно сейчас выключено.</string>
     <string name="OEAppearancePowerSaverActive">При заряде ниже %1$d%% работает энергосбережение, и размытие с анимациями на паузе. Настройка сохранена и вернётся, когда зарядишь телефон.</string>
     <string name="OEAppearancePowerSaverSettings">Энергосбережение</string>
     <string name="OEBottomNavigationBarMode">Нижняя панель навигации</string>
