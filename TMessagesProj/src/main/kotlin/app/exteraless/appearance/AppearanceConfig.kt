@@ -179,10 +179,10 @@ object AppearanceConfig {
     val dividerStyle =
         addConfig("OEAppearanceDividerStyle", ConfigItem.configTypeInt, 1)
 
-    /** Стиль стеклянного контура: 0 — блик, 1 — сплошной, 2 — скрыт. Только UI. */
+    /** Жидкое стекло убрано: контур поверхностей всегда классический сплошной (SOLID). Ключ хранится для совместимости бэкапов. */
     @JvmField
     val glassOutlineStyle =
-        addConfig(object : ConfigItem("OEAppearanceGlassOutlineStyle", ConfigItem.configTypeInt, 0) {
+        addConfig(object : ConfigItem("OEAppearanceGlassOutlineStyle", ConfigItem.configTypeInt, 1) {
             override fun setConfigInt(v: Int) {
                 val changed = Int() != v
                 super.setConfigInt(v)
@@ -190,21 +190,21 @@ object AppearanceConfig {
             }
         })
 
-    /** Стеклянное меню сообщения. Дефолт false: классическое сплошное меню Telegram. */
+    /** Стеклянное меню сообщения убрано: всегда классическое сплошное меню Telegram. Ключ хранится для совместимости бэкапов. */
     @JvmField
     val glassMessageMenu =
         addConfig("OEAppearanceGlassMessageMenu", ConfigItem.configTypeBool, false)
 
     @JvmStatic
     fun glassMessageMenu(): Boolean {
-        ensureLoaded()
-        return glassMessageMenu.Bool()
+        // Классический дизайн Telegram: стеклянных меню нет.
+        return false
     }
 
     @JvmStatic
     fun glassOutlineStyle(): Int {
-        ensureLoaded()
-        return glassOutlineStyle.Int()
+        // Классический дизайн Telegram: сплошной контур без стеклянного блика.
+        return GlassOutlineStyle.SOLID.ordinal
     }
 
     // ---- Material Design 3 ----
