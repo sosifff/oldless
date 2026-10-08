@@ -41,8 +41,10 @@ public class LiteMode {
     public static final int FLAG_CHAT_BLUR = 256;
     public static final int FLAG_CHAT_SCALE = 32768;
     public static final int FLAG_CHAT_THANOS = 65536;
+    // Liquid glass effect was removed; the flag is kept only so legacy layout branches
+    // resolve to the classic (non-glass) path. It is never set and stripped from stored prefs.
     public static final int FLAG_LIQUID_GLASS = 1 << 18;
-    public static final int FLAGS_CHAT = FLAG_CHAT_BACKGROUND | FLAG_CHAT_FORUM_TWOCOLUMN | FLAG_CHAT_SPOILER | FLAG_CHAT_BLUR | FLAG_CHAT_SCALE | FLAG_CHAT_THANOS | FLAG_LIQUID_GLASS;
+    public static final int FLAGS_CHAT = FLAG_CHAT_BACKGROUND | FLAG_CHAT_FORUM_TWOCOLUMN | FLAG_CHAT_SPOILER | FLAG_CHAT_BLUR | FLAG_CHAT_SCALE | FLAG_CHAT_THANOS;
 
     public static final int FLAG_CALLS_ANIMATIONS = 512;
     public static final int FLAG_AUTOPLAY_VIDEOS = 1024;
@@ -75,7 +77,6 @@ public class LiteMode {
         FLAG_CHAT_BACKGROUND |
         FLAG_CHAT_FORUM_TWOCOLUMN |
         FLAG_CHAT_SPOILER |
-        FLAG_CHAT_BLUR |
         FLAG_CHAT_SCALE |
         FLAG_CHAT_THANOS |
         FLAG_CALLS_ANIMATIONS |
@@ -277,7 +278,12 @@ public class LiteMode {
         }
 
         int prevValue = value;
-        value = preferences.getInt("lite_mode6", defaultValue);
+        if (preferences.contains("lite_mode6") && !preferences.contains("lite_mode7")) {
+            // Liquid glass removed, classic design by default: strip the glass flags once.
+            int migrated = preferences.getInt("lite_mode6", defaultValue) & ~FLAG_LIQUID_GLASS & ~FLAG_CHAT_BLUR;
+            preferences.edit().putInt("lite_mode7", migrated).apply();
+        }
+        value = preferences.getInt("lite_mode7", defaultValue);
         if (loaded) {
             onFlagsUpdate(prevValue, value);
         }
@@ -286,7 +292,7 @@ public class LiteMode {
     }
 
     public static void savePreference() {
-        MessagesController.getGlobalMainSettings().edit().putInt("lite_mode6", value).putInt("lite_mode_battery_level", powerSaverLevel).apply();
+        MessagesController.getGlobalMainSettings().edit().putInt("lite_mode7", value).putInt("lite_mode_battery_level", powerSaverLevel).apply();
     }
 
     public static int getPowerSaverLevel() {
@@ -362,7 +368,6 @@ public class LiteMode {
             final int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
             if (level >= 0 && scale > 0) {
                 lastBatteryLevelCached = level * 100 / scale;
-                lastBatteryLevelChecked = System.currentTimeMillis();
             } else {
                 lastBatteryLevelChecked = 0;
             }
